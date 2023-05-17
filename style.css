@@ -1,0 +1,250 @@
+html {
+    font-size: 62.5%;
+}
+
+/* Colour Pallete:
+From: https://colorhunt.co/palette/00354500454a3c6562ed6363
+Red: #ED6363
+Blue: #003545
+Green 1 (Dark): #00454A
+Green 2 (light): #3C6562
+Text: aliceblue */
+
+body {
+    background-color: #3C6562;
+    margin: auto;
+}
+
+.container.main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex.center {
+    flex: 1;
+    height: 90vh;
+    flex-direction: row;
+    /* background-color: aquamarine; */
+    background: linear-gradient(60deg, #003545, #3C6562);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+
+#navbar {
+    flex: 1;
+    background-color: #ffffff33;
+    max-height: 5vh;
+    top: 0rem;
+    align-items: center;
+}
+
+#main-title, #main-image {
+    flex: 0.5;
+    min-height: 90vh;
+    min-width: 45vw;
+    align-items: center;
+}
+
+#main-title {
+    align-items: center;
+    justify-content: left;
+    padding-left: 10vw;
+    /* background-color: red; */
+}
+
+#main-image {
+    justify-content: center;
+    overflow: hidden;
+    /* padding-top: 5vh; */
+    /* background-color: greenyellow; */
+}
+   
+
+#footer {
+    flex: 1;
+    max-height: 5vh;
+    background-color: #00454A;
+    bottom: 0;
+
+}
+
+h1 {
+    font-family: 'Arvo', serif;
+    font-weight: 400;
+    font-size: 3.5vw;
+    color: aliceblue;
+    animation: 1.5s ease-out 0s 1 fadeSlideInFromTop;
+}
+
+@keyframes fadeSlideInFromTop {
+    0% {
+      transform: translatey(-100%);
+    }
+    100% {
+      transform: translatey(0);
+    }
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+  }
+
+h1 > span {
+    font-weight: 600;
+    color: #ED6363;
+    font-size: 5vw;
+}
+
+.logo {
+    margin-left: 2vw;
+}
+
+.logo h3 {
+    font-family: 'Arvo', serif;
+    color: aliceblue;
+    font-weight: 600;
+    font-size: 2rem;
+    white-space: nowrap;
+    margin: 0 auto;
+    /* margin-left: 2vw; */
+    letter-spacing: .15em;
+    border-right: inset .15em transparent;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.logo:hover h3 {
+    animation:
+    blink-caret .75s steps(13, end)infinite,
+    typing 1s steps(13, end);
+}
+
+@keyframes blink-caret {
+    from, to { 
+        border-color: #ED6363 
+    }
+    50% { 
+        border-color: transparent; 
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0%
+    }
+    to {
+        width: 100%
+    }
+}
+
+h3 > span {
+    font-weight: 400;
+    font-style: italic;
+}
+
+#footer p {
+    font-family: 'Arvo', serif;
+    color: aliceblue;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+img {
+    /* position: absolute; */
+    bottom: 0;
+    max-height: 90vh;
+    max-width: 45vw;
+    align-self: flex-end;
+    animation: 3s ease-in 0s 1 fadeIn
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }   
+}
+
+.links-wrapper {
+    flex: 1;
+    margin-right: 2vw;
+    /* background-color: aqua; */
+}
+
+.links ul {
+    flex: 1;
+    text-align: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.links li {
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 12px;
+}
+
+.links a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+@media only screen and (max-width: 768px) {
+
+    #main-title, #main-image {
+        min-height:45vh;
+        flex: 0.5;
+    }
+
+    #main-title {
+        justify-content: center;
+        padding: 0;
+    }
+
+    #main-image {
+        position: relative;
+        overflow: visible;
+    }
+
+    h1, h1 > span {
+        font-size: 5vh;
+        text-align: center;
+        margin: 0;
+    }
+
+    .flex.center {
+        flex-direction: column;
+        margin: 0 !important;
+    }
+
+    img {
+        position: absolute;
+        min-width: 45vh;
+    }
+
+    .links {
+        visibility: hidden;
+    }
+  }
