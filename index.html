@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,32 +8,135 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" type="text/css" />
 </head>
+
 <body>
     <div class="container main">
-        <div class="flex box1" id="navbar">
-            <div class="logo"><a href="./index.html"><h3>&#60; MJB <span class="text">codes</span> &#62; </h3></a></div>
-            <div class="links-wrapper">
+        <!-- Navigation -->
+        <div class="flex" id="navbar">
+            <div class="logo"><a href="./index.html">
+                    <h3>&#60;MJB <span class="text">codes</span>&#62;</h3>
+                </a>
+            </div>
+            <div class="menu wrapper" id="menu-wrapper">
+                <div id="icon" onclick="openCloseMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="links wrapper" id="menuNav">
                 <span class="links">
                     <ul>
-                        <li><a href="#">About Me</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a onClick="openCloseMenu(); document.getElementById('about').scrollIntoView({behavior: 'smooth'})">About Me</a></li>
+                        <li><a onClick="openCloseMenu(); document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">Portfolio</a></li>
+                        <li><a onClick="openCloseMenu(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</a></li>
                     </ul>
                 </span>
             </div>
         </div>
-        <div class="flex center">
-            <div class="flex box2" id="main-title">
-                <h1 class="text">I am a <i>freelance</i><br/><span class="text">Web developer</span></h1>
+        <!-- Hero -->
+        <section class="flex" id="hero">
+            <div class="bg-video">
+                <video type="video/mp4" autoplay="true" muted="true" loop="true">
+                    <source src="./assets/videos/network_-_45961 (Original).mp4"></source>
+                </video>
             </div>
-            <div class="flex box3" id="main-image">
-                <img src="./assets/images/portrait-cutout.png" alt="portrait photo of me"></img>
+            <div class="flex" id="main-title">
+                <div class="title wrapper">
+                    <h1 class="text">
+                        Full stack<br/><span>Web Development</span>
+                    </h1>
+                </div>
+                <div class="button wrapper">
+                    <button class="button" id="titleBtn" onClick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Find out more</button>
+                    <button class="button" id="contactBtn" onClick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get in touch</button>
+                </div>
             </div>
-        </div>
-        <div class="flex box4" id="footer"><p>Footer</p></div>
+        </section>
+        <!-- About -->
+        <section class="flex" id="about">
+            <div class="flex" id="about-image">
+                <div class="image wrapper">
+                    <img src="./assets/images/portrait-cutout.png" id="web-image" alt="portrait photo of me"></img>
+                </div>
+            </div>
+            <div class="flex" id="about-text">
+                <div class="text wrapper">
+                    <h2>About me</h2>
+                    <p>I'm Mike and I've been a developer for 5 years. Working predominantly within
+                        the entertainment and events industry, I have designed, developed and maintained websites using HTML
+                        and CSS frameworks, built custom integrations to third-party APIs in Javascript and created
+                        insightful data dashboards utilising multiple query languages.</p>
+                        <div class="button wrapper">
+                            <button class="button" id="portfolioBtn" onClick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">See my work</button>
+                            <button class="button" id="contactBtn" onClick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Hire me</button>
+                        </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio -->
+        <section class="flex" id="portfolio">
+            <div class="title wrapper">
+                <h2>Portfolio & Example Work</h2>
+            </div>
+            <div class="text wrapper">
+                <p>A showcase of live and example projects that demonstrate my skillset</p>
+            </div>
+            <!-- cards -->
+            <div class="container" id="portfolio-cards">
+                <!-- card 1 -->
+                <div class="card" id="mesmerica-site" type="button" onClick="window.open('https://tickets.mesmerica.com').focus()">
+                    <img src="./assets/images/mesmerica-tickets-site.JPG" alt="mesmerica website image" id="card-img"></img>
+                    <div class="text wrapper">
+                        <p><span>Mesmerica 360 Events site</span><br/>
+                            Event main site for Mesmerica 360 immersive theatre experiences</p>
+                    </div>
+                </div>
+                <!-- card 2 -->
+                <div class="card" id="bcfc-badge">
+                    <img src="./assets/images/bcfc-colorizer.png" alt="BCFC badge colorizer" id="card-img" onClick="window.open('https://mjb-codes.github.io/bcfc-badge-colorizer').focus()"></img>
+                    <div class="text wrapper">
+                        <p><span>BCFC Badge Colorizer</span><br/>
+                            Example of dynamic content changing with CSS</p>
+                    </div>
+                </div>
+                <!-- card 3 -->
+                <div class="card" id="mesmerica-tickets">
+                    <img src="./assets/images/mesmerica-tickets-site.png" alt="mesmerica website image" id="card-img" onClick="window.open('https://tickets.mesmerica.com/denton').focus()"></img>
+                    <div class="text wrapper">
+                        <p><span>Mesmerica 360 Tickets site</span><br/>
+                            Event ticket site for Mesmerica 360 immersive theatre experiences</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact -->
+        <section class="flex" id="contact">
+            <div class="container">
+                <div class="title wrapper">
+                    <h1 class="text">Want to work together?</br><span class="text">Get in touch</span></h1>
+                </div>
+                <div class="text wrapper">
+                    <p>Want to discuss your project further? Lets arrange a suitable time to talk<br />
+                </div>
+                <div class="button wrapper">
+                    <button class="button" id="contactBtn">Contact me</button>
+                </div>
+            </div>
+            <div></div>
+        </section>
+        <!-- Footer -->
+        <section id="footer">
+            <div class="flex" class="footer container">
+                <p>&copy MJB Codes 2023 | <a href="#">hello@mjbcodes.io</a></p>
+            </div>
+        </section>
     </div>
+    <script src="./script/menu.js"></script>
 </body>
+
 </html>
